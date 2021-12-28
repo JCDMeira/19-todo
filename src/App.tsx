@@ -1,5 +1,5 @@
 import React from 'react';
-import { Conteiner, GlobalStyle } from './Global';
+import { Conteiner, GlobalStyle } from './styles/Global';
 
 function App(): JSX.Element {
   return (
