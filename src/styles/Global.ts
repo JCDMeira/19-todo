@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Light Theme */
 
-  --very-light-gray: #FAFAFA;
+  --background-light: #FAFAFA;
   --very-light-grayish: #E4E5F1;
   --light-grayish-blue: #D2D3DB;
   --dark-grayish-blue: #9394A5;
@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Dark Theme */
 
-  --very-dark-blue: #161722;
+  --background-dark: #161722;
   --very-dark-desaturated: #25273C;
   --light-grayish-blue: #CACDE8;
   --light-grayish-blue: #E4E5F1; /*(hover) */
@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Conteiner = styled.div`
-  background: var(--desaturated-dark-cyan);
+  background: ${({ theme }) => theme.background};
   width: 100%;
   height: 100vh;
 `;
