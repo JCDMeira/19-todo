@@ -10,8 +10,9 @@ import ThemeToggler from './components/ThemeToggler/themeToggler';
 import { useTheme } from './hooks/useTheme.hook';
 
 // # my components
-import BackImage from './components/BackImage';
+import BackImage from './components/BackImage/index';
 import { Title1 } from './styles/typography ';
+
 
 function App(): JSX.Element {
   const [theme, toggleTheme] = useTheme();

@@ -7,17 +7,24 @@ const Button = styled.button`
   position: absolute;
   top: 4.8rem;
   right: 2.4rem;
+
   font-size: 1.6em;
   width: 2em;
   height: 2em;
   display: grid;
   place-items: center;
   border: none;
+
   border-radius: 0.2em;
   background: transparent;
   transition: all 0.2s ease-out;
 
   z-index: 100;
+
+  /* background: ${({ theme }) => theme.cardBg}; */
+  background: red;
+  border-radius: 0.2em;
+  transition: all 0.2s ease-out;
 
   &:active {
     transform: scale(0.95);
