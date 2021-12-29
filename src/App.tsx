@@ -13,7 +13,6 @@ import { useTheme } from './hooks/useTheme.hook';
 import BackImage from './components/BackImage/index';
 import { Title1 } from './styles/typography ';
 
-
 function App(): JSX.Element {
   const [theme, toggleTheme] = useTheme();
 

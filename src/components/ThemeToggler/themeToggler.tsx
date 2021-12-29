@@ -21,8 +21,6 @@ const Button = styled.button`
 
   z-index: 100;
 
-  /* background: ${({ theme }) => theme.cardBg}; */
-  background: red;
   border-radius: 0.2em;
   transition: all 0.2s ease-out;
 
