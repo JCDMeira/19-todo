@@ -4,8 +4,8 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Conteiner, GlobalStyle } from './styles/Global';
 import { lightTheme, darkTheme } from './styles/themes/themes';
-import ThemeToggler from './styles/themes/themeToggler';
-import { useTheme } from './styles/themes/useTheme.hook';
+import ThemeToggler from './components/ThemeToggler/themeToggler';
+import { useTheme } from './hooks/useTheme.hook';
 
 function App(): JSX.Element {
   const [theme, toggleTheme] = useTheme();

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const useTheme = (): [string, () => void] => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   const saveSetTheme = (theme: string) => {
     localStorage.setItem('theme', theme);

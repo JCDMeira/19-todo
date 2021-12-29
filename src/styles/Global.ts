@@ -16,13 +16,13 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Dark Theme */
 
-  --background-dark: #161722;
-  --very-dark-desaturated: #25273C;
-  --light-grayish-blue: #CACDE8;
+  --background-dark: #161722; /* background */
+  --very-dark-desaturated: #25273C; /* background card*/
+  --light-grayish-blue: #CACDE8; /* text card */
   --light-grayish-blue: #E4E5F1; /*(hover) */
-  --vdark-grayish-blue: #777A92;
-  --very-grayish: #4D5066;
-  --very-grayish-blue: #393A4C;
+  --vdark-grayish-blue: #777A92; /* text create */
+  --very-grayish: #4D5066; /* complete, options e footer */
+  --very-grayish-blue: #393A4C; /* circle */
   }
 
   *{
