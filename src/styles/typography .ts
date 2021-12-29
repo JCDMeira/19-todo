@@ -8,4 +8,10 @@ export const Title1 = styled.h1`
 
   color: var(--title1);
   text-transform: uppercase;
+
+  position: relative;
+  z-index: 10;
+
+  top: 4.8rem;
+  margin-left: 2.5rem;
 `;

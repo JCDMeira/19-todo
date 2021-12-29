@@ -3,6 +3,9 @@ import styled, { keyframes } from 'styled-components';
 export const Wrapper = styled.div`
   width: 100%;
   height: 200px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 `;
 Wrapper.displayName = 'Wrapper';
 
@@ -17,7 +20,7 @@ const grow = keyframes`
 
 export const Image = styled.img`
   animation: ${grow} 0.2s ease-out forwards;
-
+  position: inherit;
   width: 100%;
   height: 200px;
 `;

@@ -5,8 +5,8 @@ import sunIcon from '../../assets/images/icon-sun.svg';
 
 const Button = styled.button`
   position: absolute;
-  top: 1em;
-  right: 7em;
+  top: 4.8rem;
+  right: 2.4rem;
   font-size: 1.6em;
   width: 2em;
   height: 2em;
@@ -17,7 +17,7 @@ const Button = styled.button`
   background: transparent;
   transition: all 0.2s ease-out;
 
-  z-index: 10;
+  z-index: 100;
 
   &:active {
     transform: scale(0.95);
