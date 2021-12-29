@@ -1,11 +1,13 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+
+// # my styles components
 import { Conteiner, GlobalStyle } from './styles/Global';
+
+// # my theme files
+import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/themes/themes';
-import ThemeToggler from './styles/themes/themeToggler';
-import { useTheme } from './styles/themes/useTheme.hook';
+import ThemeToggler from './components/ThemeToggler/themeToggler';
+import { useTheme } from './hooks/useTheme.hook';
 
 function App(): JSX.Element {
   const [theme, toggleTheme] = useTheme();

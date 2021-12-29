@@ -13,9 +13,8 @@ const Button = styled.button`
   display: grid;
   place-items: center;
   border: none;
-  /* background: ${({ theme }) => theme.cardBg}; */
-  background: red;
   border-radius: 0.2em;
+  background: transparent;
   transition: all 0.2s ease-out;
 
   &:active {
