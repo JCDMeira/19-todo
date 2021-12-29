@@ -17,6 +17,8 @@ const Button = styled.button`
   background: transparent;
   transition: all 0.2s ease-out;
 
+  z-index: 10;
+
   &:active {
     transform: scale(0.95);
   }

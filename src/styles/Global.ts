@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   --bright-blue: #3A7BFD;
   --gradient-initial: #57DDFF;
   --gradient-final: #C058F3;
+  --title1: #fff;
 
   /* Light Theme */
 
