@@ -23,5 +23,22 @@ export const Image = styled.img`
   position: inherit;
   width: 100%;
   height: 200px;
+
+  .mobileBackground {
+    display: visible;
+  }
+  .desktopBackground {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    height: 300px;
+    .mobileBackground {
+      display: none;
+    }
+    .desktopBackground {
+      display: visible;
+    }
+  }
 `;
 Image.displayName = 'Image';
