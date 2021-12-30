@@ -12,6 +12,7 @@ import { useTheme } from './hooks/useTheme.hook';
 // # my components
 import BackImage from './components/BackImage/index';
 import { Title1 } from './styles/typography ';
+import Tasks from './components/Tasks';
 
 function App(): JSX.Element {
   const [theme, toggleTheme] = useTheme();
@@ -25,6 +26,7 @@ function App(): JSX.Element {
           <BackImage theme={theme} />
           <Title1>Todo</Title1>
         </header>
+        <Tasks />
       </Conteiner>
     </ThemeProvider>
   );
