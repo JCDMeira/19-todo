@@ -15,3 +15,10 @@ export const Title1 = styled.h1`
   top: 4.8rem;
   margin-left: 2.5rem;
 `;
+
+export const FooterText = styled.p`
+  font-size: 1.35rem;
+  line-height: 1.35rem;
+
+  color: ${({ theme }) => theme.textSecundary};
+`;
