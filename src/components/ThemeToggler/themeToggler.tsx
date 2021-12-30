@@ -1,67 +1,12 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
 import moonIcon from '../../assets/images/icon-moon.svg';
 import sunIcon from '../../assets/images/icon-sun.svg';
-
-const Button = styled.button`
-  position: absolute;
-  top: 4.8rem;
-  right: 2.4rem;
-
-  font-size: 1.6em;
-  width: 2em;
-  height: 2em;
-  display: grid;
-  place-items: center;
-  border: none;
-
-  border-radius: 0.2em;
-  background: transparent;
-  transition: all 0.2s ease-out;
-
-  z-index: 100;
-
-  border-radius: 0.2em;
-  transition: all 0.2s ease-out;
-
-  &:active {
-    transform: scale(0.95);
-  }
-`;
-Button.displayName = 'Button';
+import * as S from './styles';
 
 interface ThemeTogglerProps {
   theme: string | (() => void);
   toggleTheme: () => void;
 }
-
-const grow = keyframes`
-  from{
-    transform: scale(0.5)
-  }
-  to{
-    transform: scale(1)
-  }
-`;
-
-const rotate = keyframes`
-  from{
-    transform: scale(0.5) rotate(0deg)
-  }
-  to{
-    transform: scale(1) rotate(360deg)
-  }
-`;
-
-const Icon = styled.img`
-  animation: ${grow} 0.2s ease-out forwards;
-`;
-Icon.displayName = 'Icon';
-
-const SunIcon = styled.img`
-  animation: ${rotate} 0.2s ease-out forwards;
-`;
-SunIcon.displayName = 'SunIcon';
 
 const ThemeToggler = ({
   theme,
@@ -72,10 +17,10 @@ const ThemeToggler = ({
   };
   return (
     <>
-      <Button title="Theme Toggler" onClick={() => onClick()}>
-        {theme === 'light' && <Icon src={moonIcon} />}
-        {theme === 'dark' && <SunIcon src={sunIcon} />}
-      </Button>
+      <S.Button title="Theme Toggler" onClick={() => onClick()}>
+        {theme === 'light' && <S.Icon src={moonIcon} />}
+        {theme === 'dark' && <S.SunIcon src={sunIcon} />}
+      </S.Button>
     </>
   );
 };
