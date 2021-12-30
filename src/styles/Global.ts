@@ -42,7 +42,8 @@ export const GlobalStyle = createGlobalStyle`
 export const Conteiner = styled.div`
   background: ${({ theme }) => theme.background};
   width: 100%;
-  min-height: 100vh;
+  min-height: 730px;
+  height: 100vh;
   position: relative;
 
   display: flex;
