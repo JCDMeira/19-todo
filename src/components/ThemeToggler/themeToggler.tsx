@@ -4,7 +4,7 @@ import sunIcon from '../../assets/images/icon-sun.svg';
 import * as S from './styles';
 
 interface ThemeTogglerProps {
-  theme: string | (() => void);
+  theme: string;
   toggleTheme: () => void;
 }
 
