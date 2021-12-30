@@ -1,11 +1,11 @@
 export const lightTheme = {
   background: 'var(--background-light)',
   backgroundCard: 'var(--white) ',
-  textPrimary: 'var(--dark-grayish-blue)',
+  textPrimary: 'var(--very-grayish-blue)',
   hoverText: 'var(--very-dark-grayish)',
-  textCreate: 'var(--light-grayish-blue)',
+  textCreate: 'var(--dark-grayish-blue)',
   textSecundary: 'var(--dark-grayish-blue)',
-  circleColor: 'var(--very-grayish-blue)',
+  circleColor: 'var(--light-grayish-blue)',
 };
 
 export const darkTheme = {

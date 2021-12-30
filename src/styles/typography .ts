@@ -22,3 +22,9 @@ export const FooterText = styled.p`
 
   color: ${({ theme }) => theme.textSecundary};
 `;
+
+export const Paragraph = styled.p`
+  font-weight: normal;
+  font-size: 1.16rem;
+  line-height: 1.2rem;
+`;

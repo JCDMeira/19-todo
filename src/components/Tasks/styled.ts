@@ -7,5 +7,9 @@ export const Wrapper = styled.main`
   z-index: 20;
   /* top: 10.8rem; */
   margin-top: -9.2rem;
+
+  position: relative;
+
   background: khaki;
+  border-radius: 5px;
 `;
