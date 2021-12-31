@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 87.2vw;
+  max-width: 540px;
   height: 48px;
   background: ${({ theme }) => theme.backgroundCard};
   border-radius: 5px;

@@ -6,6 +6,7 @@ interface WrapperProps {
 
 export const Wrapper = styled.div<WrapperProps>`
   width: 87.2vw;
+  max-width: 540px;
   height: 53px;
   background: ${({ theme }) => theme.backgroundCard};
   border-bottom: 1px solid ${({ theme }) => theme.textSecundary};

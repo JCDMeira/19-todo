@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 87.2vw;
+  max-width: 540px;
   height: 50px;
 
   border-radius: 0px 0px 5px 5px;
@@ -29,6 +30,7 @@ export const Wrapper = styled.div`
 
 export const OptionsFilter = styled.div`
   width: 87.2vw;
+  max-width: 540px;
   height: 48px;
   font-size: 1.4rem;
 
