@@ -6,7 +6,7 @@ function Options(): JSX.Element {
   return (
     <S.Wrapper>
       <Paragraph>5 items left</Paragraph>
-      <div>aqui </div>
+      <S.OptionsFilter>aqui </S.OptionsFilter>
       <button className="clearButton">Clear Completed</button>
     </S.Wrapper>
   );
