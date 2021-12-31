@@ -8,8 +8,7 @@ export const Wrapper = styled.main`
   /* top: 10.8rem; */
   margin-top: -9.2rem;
 
-  position: relative;
+  /* position: relative; */
 
-  background: khaki;
   border-radius: 5px;
 `;
