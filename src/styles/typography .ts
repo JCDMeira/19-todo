@@ -35,4 +35,9 @@ export const Paragraph = styled.p`
   font-weight: normal;
   font-size: 1.16rem;
   line-height: 1.2rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
 `;
