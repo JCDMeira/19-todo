@@ -33,6 +33,7 @@ export const Button = styled.button<ButtonProps>`
       : 'transparent'};
   border: 1px solid ${({ theme }) => theme.circleColor};
   margin-right: 1.2rem;
+  cursor: pointer;
 `;
 
 export const ButtonRemove = styled(Button)`
