@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   position: absolute;
   top: 0;
   z-index: 1;
+
+  @media (min-width: 1024px) {
+    height: 300px;
+  }
 `;
 Wrapper.displayName = 'Wrapper';
 

@@ -16,6 +16,11 @@ export const Button = styled.button`
   &:active {
     transform: scale(0.95);
   }
+
+  @media (min-width: 1024px) {
+    top: 8rem;
+    right: 44.8rem;
+  }
 `;
 Button.displayName = 'Button';
 
@@ -38,11 +43,24 @@ const rotate = keyframes`
 `;
 
 export const Icon = styled.img`
+  width: 2rem;
+  height: 2rem;
   animation: ${grow} 0.2s ease-out forwards;
+
+  @media (min-width: 1024px) {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
 `;
 Icon.displayName = 'Icon';
 
 export const SunIcon = styled.img`
+  width: 2rem;
+  height: 2rem;
   animation: ${rotate} 0.2s ease-out forwards;
+  @media (min-width: 1024px) {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
 `;
 SunIcon.displayName = 'SunIcon';

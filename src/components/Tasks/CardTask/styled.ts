@@ -6,6 +6,7 @@ interface WrapperProps {
 
 export const Wrapper = styled.div<WrapperProps>`
   width: 87.2vw;
+  max-width: 540px;
   height: 53px;
   background: ${({ theme }) => theme.backgroundCard};
   border-bottom: 1px solid ${({ theme }) => theme.textSecundary};
@@ -34,6 +35,11 @@ export const Button = styled.button<ButtonProps>`
   border: 1px solid ${({ theme }) => theme.circleColor};
   margin-right: 1.2rem;
   cursor: pointer;
+
+  @media (min-width: 1024px) {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
 `;
 
 export const ButtonRemove = styled(Button)`
@@ -43,5 +49,12 @@ export const ButtonRemove = styled(Button)`
   img {
     width: 1.2rem;
     height: 1.2rem;
+  }
+
+  @media (min-width: 1024px) {
+    img {
+      width: 1.7rem;
+      height: 1.7rem;
+    }
   }
 `;

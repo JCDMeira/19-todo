@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.main`
   width: 87.2vw;
+  max-width: 540px;
   min-height: 496px;
 
   z-index: 20;
@@ -11,4 +12,8 @@ export const Wrapper = styled.main`
   /* position: relative; */
 
   border-radius: 5px;
+
+  @media (min-width: 1024px) {
+    min-height: 70px;
+  }
 `;
