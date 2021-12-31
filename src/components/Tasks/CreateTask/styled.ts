@@ -20,6 +20,11 @@ export const Button = styled.button`
   background: transparent;
   border: 1px solid ${({ theme }) => theme.circleColor};
   margin-right: 1.2rem;
+
+  @media (min-width: 1024px) {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
 `;
 
 export const Create = styled.input`
@@ -32,5 +37,10 @@ export const Create = styled.input`
 
   &::placeholder {
     color: ${({ theme }) => theme.textCreate};
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
   }
 `;

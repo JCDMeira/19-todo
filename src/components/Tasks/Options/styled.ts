@@ -26,6 +26,9 @@ export const Wrapper = styled.div`
     font-size: inherit;
     color: inherit;
   }
+  @media (min-width: 1024px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const OptionsFilter = styled.div`
