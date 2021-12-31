@@ -14,6 +14,14 @@ export const Title1 = styled.h1`
 
   top: 4.8rem;
   margin-left: 2.5rem;
+
+  @media (min-width: 1024px) {
+    margin-left: 31.180555555555557vw;
+    top: 7.7rem;
+    font-size: 4.2rem;
+    line-height: 4.2rem;
+    letter-spacing: 0.32em;
+  }
 `;
 
 export const FooterText = styled.p`

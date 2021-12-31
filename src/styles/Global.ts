@@ -58,4 +58,10 @@ export const Conteiner = styled.div`
     height: 200px;
     width: 100%;
   }
+
+  @media (min-width: 1024px) {
+    header {
+      height: 300px;
+    }
+  }
 `;
