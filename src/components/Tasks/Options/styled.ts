@@ -30,6 +30,7 @@ export const Wrapper = styled.div`
 export const OptionsFilter = styled.div`
   width: 87.2vw;
   height: 48px;
+  font-size: 1.4rem;
 
   position: absolute;
   left: 0px;
@@ -41,4 +42,21 @@ export const OptionsFilter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  div {
+    width: 16.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+  }
 `;

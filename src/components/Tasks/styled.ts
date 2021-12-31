@@ -10,6 +10,5 @@ export const Wrapper = styled.main`
 
   /* position: relative; */
 
-  background: khaki;
   border-radius: 5px;
 `;
