@@ -53,15 +53,14 @@ Users should be able to:
 <p  align="center"><img width="720px" src="./presentation/desktop.png" align="center"></img></p>
 <p  align="center"><img width="720px" src="./presentation/desktop1.png" align="center"></img></p>
 
-<!--### result of my work
+### result of my work
 
-<p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p> -->
+<p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p>
 
 ### Links
 
-<!-- - Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/job-listings-with-filtering-react-typescript-and-stylescomponens-kLWMlWkVR)
-- Live Site URL: [check the result](https://jcdmeira-filter-jobs.netlify.app) -->
-
+- Solution URL: [My solution for this challenge](https://www.frontendmentor.io/solutions/todo-app-with-react-ts-and-styledcomponents-OG2vDyG-C)
+- Live Site URL: [check the result](https://jcdmeira-todo.netlify.app)
 - My figma design: [Figma](https://www.figma.com/file/rTGUE7e5Te4e4QYPkPt3JU/19-todo?node-id=0%3A1)
 
 ## My process
