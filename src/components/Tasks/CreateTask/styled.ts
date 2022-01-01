@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding-left: 2rem;
+
+  @media (min-width: 1024px) {
+    height: 64px;
+    margin-bottom: 2.4rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -24,6 +29,7 @@ export const Button = styled.button`
   @media (min-width: 1024px) {
     width: 2.6rem;
     height: 2.6rem;
+    margin-right: 2.6rem;
   }
 `;
 

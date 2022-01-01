@@ -15,5 +15,6 @@ export const Wrapper = styled.main`
 
   @media (min-width: 1024px) {
     min-height: 70px;
+    margin-top: -14.2rem;
   }
 `;

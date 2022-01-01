@@ -34,22 +34,26 @@ Users should be able to:
 
 ## Screenshot
 
-<!--
 ### Mobile design
 
 <p  align="center">
   <img width="300px" src="./presentation/mobile.png" align="center"></img>
 </p>
+<p  align="center">
+  <img width="300px" src="./presentation/mobile1.png" align="center"></img>
+</p>
 
 ### Tablets design
 
 <p  align="center"><img width="420px"  src="./presentation/i-pad.png" align="center"></img></p>
+<p  align="center"><img width="420px"  src="./presentation/i-pad1.png" align="center"></img></p>
 
 ### Desktop design
 
 <p  align="center"><img width="720px" src="./presentation/desktop.png" align="center"></img></p>
+<p  align="center"><img width="720px" src="./presentation/desktop1.png" align="center"></img></p>
 
-### result of my work
+<!--### result of my work
 
 <p  align="center"><img width="1080px" src="./presentation/design-x-myWork.gif" align="center"></img></p> -->
 

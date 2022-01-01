@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface WrapperProps {
   isFirst: string;
+  isCompleted?: boolean;
 }
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -16,8 +17,15 @@ export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
   padding-left: 2rem;
-  color: ${({ theme }) => theme.textPrimary};
+  /* color: ${({ theme }) => theme.textPrimary}; */
+  color: ${({ theme, ...rest }) =>
+    rest.isCompleted ? `${theme.textSecundary}` : `${theme.textPrimary}`};
+  text-decoration: ${(props) => (props.isCompleted ? 'line-through' : 'none')};
   position: relative;
+
+  @media (min-width: 1024px) {
+    height: ${(props) => (props.isCompleted ? '64px' : '65px')};
+  }
 `;
 
 interface ButtonProps {
@@ -39,6 +47,7 @@ export const Button = styled.button<ButtonProps>`
   @media (min-width: 1024px) {
     width: 2.6rem;
     height: 2.6rem;
+    margin-right: 2.6rem;
   }
 `;
 

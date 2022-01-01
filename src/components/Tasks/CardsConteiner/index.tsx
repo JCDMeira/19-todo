@@ -5,27 +5,27 @@ import * as S from './styled';
 function CardsConteiner(): JSX.Element {
   const test = [
     {
-      task: '1',
+      task: 'Complete online JavaScript course',
       isCompleted: true,
     },
     {
-      task: '2',
+      task: 'Jog around the park 3x',
       isCompleted: false,
     },
     {
-      task: '3',
+      task: '10 minutes meditation',
       isCompleted: false,
     },
     {
-      task: '3',
+      task: 'Read for 1 hour',
       isCompleted: false,
     },
     {
-      task: '3',
+      task: 'Pick up groceries',
       isCompleted: false,
     },
     {
-      task: '3',
+      task: 'Complete Todo App on Frontend Mentor',
       isCompleted: false,
     },
   ];
