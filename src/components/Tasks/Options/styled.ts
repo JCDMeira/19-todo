@@ -64,4 +64,12 @@ export const OptionsFilter = styled.div`
       color: inherit;
     }
   }
+
+  @media (min-width: 1024px) {
+    width: 205px;
+    height: 48px;
+    position: unset;
+    left: auto;
+    top: auto;
+  }
 `;
