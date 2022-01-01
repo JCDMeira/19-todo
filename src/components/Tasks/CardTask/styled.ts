@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface WrapperProps {
   isFirst: string;
+  isCompleted?: boolean;
 }
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -16,7 +17,10 @@ export const Wrapper = styled.div<WrapperProps>`
   display: flex;
   align-items: center;
   padding-left: 2rem;
-  color: ${({ theme }) => theme.textPrimary};
+  /* color: ${({ theme }) => theme.textPrimary}; */
+  color: ${({ theme, ...rest }) =>
+    rest.isCompleted ? `${theme.textSecundary}` : `${theme.textPrimary}`};
+  text-decoration: ${(props) => (props.isCompleted ? 'line-through' : 'none')};
   position: relative;
 `;
 

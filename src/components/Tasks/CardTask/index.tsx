@@ -13,7 +13,7 @@ interface CardTaskProps {
 }
 function CardTask({ dataTask, isFirst }: CardTaskProps): JSX.Element {
   return (
-    <S.Wrapper isFirst={isFirst}>
+    <S.Wrapper isFirst={isFirst} isCompleted={dataTask.isCompleted}>
       <S.Button isCompleted={dataTask.isCompleted}>
         {dataTask.isCompleted && <img src={checked} alt="task is completed" />}
       </S.Button>
