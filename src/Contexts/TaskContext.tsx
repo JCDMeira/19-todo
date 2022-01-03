@@ -5,7 +5,7 @@ type TaskType = {
   isCompleted: string;
 };
 
-type PropsUserContext = {
+type PropsTaskContext = {
   todos: TaskType[];
   setTodos: React.Dispatch<React.SetStateAction<TaskType[]>>;
 };
@@ -21,9 +21,9 @@ const DEFAULT_VALUE = {
   setTodos: () => {},
 };
 
-const TaskContext = createContext<PropsUserContext>(DEFAULT_VALUE);
+const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
 
-const TaskContextProvider: React.FC = ({ children }) => {
+const TaskProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState(DEFAULT_VALUE.todos);
 
   return (
@@ -33,6 +33,6 @@ const TaskContextProvider: React.FC = ({ children }) => {
   );
 };
 
-const TaskConsumer = () => useContext(TaskContext);
+const TaskConsumer = (): PropsTaskContext => useContext(TaskContext);
 
-export { TaskContext, TaskContextProvider, TaskConsumer };
+export { TaskContext, TaskProvider, TaskConsumer };
