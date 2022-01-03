@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 type TaskType = {
   task: string;
-  isCompleted: string;
+  isCompleted: boolean;
 };
 
 type PropsTaskContext = {
@@ -13,8 +13,8 @@ type PropsTaskContext = {
 const DEFAULT_VALUE = {
   todos: [
     {
-      task: '',
-      isCompleted: '',
+      task: 'hello this is my todo App',
+      isCompleted: true,
     },
   ],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
