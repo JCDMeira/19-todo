@@ -1,81 +1,38 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// // # tipando os dados
-// interface TodoTask {
-//   task: string;
-//   isCompleted: boolean;
-// }
-
-// // # tipadno o contexto
-// type ContextType = {
-//   todos: TodoTask;
-//   setTodos: React.Dispatch<React.SetStateAction<TodoTask>>;
-// };
-
-// // # valor inicial
-// const defaultValue = {
-//   todos: {
-//     task: 'string',
-//     isCompleted: false,
-//   },
-//   setTodos: () => {},
-// };
-
-// const TaskContext = createContext<ContextType>(defaultValue.todos);
-
-// const TaskProvide: React.FC = ({ children }) => {
-//   const [todos, setTodos] = useState<TodoTask[]>([
-//     {
-//       task: 'Complete online JavaScript course',
-//       isCompleted: true,
-//     },
-//     {
-//       task: 'Jog around the park 3x',
-//       isCompleted: false,
-//     },
-//   ]);
-
-//   return (
-//     <TaskContext.Provider>
-//       {children}
-//     </TaskProvider.Provider>
-//   )
-// };
-
-// const TaskConsumer = () => useContext(TaskContext);
-
-// export { TaskContext, TaskProvide, TaskConsumer };
-
-type UserType = {
-  name: string;
-  lastName: string;
-  email: string;
+type TaskType = {
+  task: string;
+  isCompleted: boolean;
 };
 
-type PropsUserContext = {
-  state: UserType;
-  setState: React.Dispatch<React.SetStateAction<UserType>>;
+type PropsTaskContext = {
+  todos: TaskType[];
+  setTodos: React.Dispatch<React.SetStateAction<TaskType[]>>;
 };
 
 const DEFAULT_VALUE = {
-  state: {
-    name: '',
-    lastName: '',
-    email: '',
-  },
+  todos: [
+    {
+      task: 'hello this is my todo App',
+      isCompleted: true,
+    },
+  ],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setState: () => {},
+  setTodos: () => {},
 };
 
-const UserContext = createContext<PropsUserContext>(DEFAULT_VALUE);
-const Provider = UserContext.Provider;
+const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
 
-const UserContextProvider: React.FC = ({ children }) => {
-  const [state, setState] = useState(DEFAULT_VALUE.state);
+const TaskProvider: React.FC = ({ children }) => {
+  const [todos, setTodos] = useState(DEFAULT_VALUE.todos);
 
-  return <Provider value={{ state, setState }}>{children}</Provider>;
+  return (
+    <TaskContext.Provider value={{ todos, setTodos }}>
+      {children}
+    </TaskContext.Provider>
+  );
 };
 
-const UserConsumer = () => useContext(UserContext);
+const TaskConsumer = (): PropsTaskContext => useContext(TaskContext);
 
-export { UserContext, UserContextProvider, UserConsumer };
+export { TaskContext, TaskProvider, TaskConsumer };
