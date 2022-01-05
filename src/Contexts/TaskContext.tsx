@@ -7,8 +7,13 @@ type TaskType = {
 
 type PropsTaskContext = {
   todos: TaskType[];
-  setTodos: React.Dispatch<React.SetStateAction<TaskType[]>>;
+  // eslint-disable-next-line no-unused-vars
+  addTodo: (newTodo: TaskType) => void;
 };
+// type PropsTaskContext = {
+//   todos: TaskType[];
+//   setTodos: React.Dispatch<React.SetStateAction<TaskType[]>>;
+// };
 
 const DEFAULT_VALUE = {
   todos: [
@@ -18,7 +23,7 @@ const DEFAULT_VALUE = {
     },
   ],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setTodos: () => {},
+  addTodo: () => {},
 };
 
 const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
@@ -26,8 +31,12 @@ const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
 const TaskProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState(DEFAULT_VALUE.todos);
 
+  const addTodo = (newTodo: TaskType) => {
+    setTodos((todos) => [...todos, newTodo]);
+  };
+
   return (
-    <TaskContext.Provider value={{ todos, setTodos }}>
+    <TaskContext.Provider value={{ todos, addTodo }}>
       {children}
     </TaskContext.Provider>
   );
