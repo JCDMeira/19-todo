@@ -9,7 +9,7 @@ interface formValuesProps {
 }
 
 function CreateTask(): JSX.Element {
-  const { todos, setTodos } = TaskConsumer();
+  const { todos, addTodo } = TaskConsumer();
 
   const [formValues, setFormValues] = useState<formValuesProps>({});
 
@@ -21,7 +21,7 @@ function CreateTask(): JSX.Element {
 
     if (formValues) {
       setFormValues({});
-      setTodos([...resultTodo]);
+      addTodo(resultTodo);
     }
   };
 
