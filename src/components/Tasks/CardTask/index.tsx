@@ -22,7 +22,7 @@ function CardTask({ dataTask, isFirst }: CardTaskProps): JSX.Element {
       <S.Button
         isCompleted={dataTask.isCompleted}
         value={dataTask.task}
-        onClick={(e: React.MouseEvent<HTMLButtonElement>) => completeTodo(e)}
+        onClick={() => completeTodo(dataTask)}
       >
         {dataTask.isCompleted && <img src={checked} alt="task is completed" />}
       </S.Button>

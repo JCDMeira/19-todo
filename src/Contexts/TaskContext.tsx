@@ -10,7 +10,7 @@ type PropsTaskContext = {
   // eslint-disable-next-line no-unused-vars
   addTodo: (newTodo: TaskType) => void;
   // eslint-disable-next-line no-unused-vars
-  completeTodo: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  completeTodo: (e: TaskType) => void;
   // eslint-disable-next-line no-unused-vars
   removeTodo: (e: TaskType) => void;
 };
@@ -40,18 +40,19 @@ const TaskProvider: React.FC = ({ children }) => {
     localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
   };
 
-  const completeTodo = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const todo = (e.target as HTMLInputElement).value;
-    console.log('todo', todo);
+  const completeTodo = (e: TaskType) => {
+    const todo = e;
     const restOfTodos = todos.map((value) => {
-      if (value.task !== todo) {
+      if (value.task !== todo.task) {
         return value;
       } else {
-        return { task: todo, isCompleted: true };
+        return value.isCompleted
+          ? { task: value.task, isCompleted: false }
+          : { task: value.task, isCompleted: true };
       }
     });
-    console.log('rest', restOfTodos);
     setTodos(restOfTodos);
+    localStorage.setItem('todos', JSON.stringify(restOfTodos));
   };
 
   const removeTodo = (e: TaskType) => {
