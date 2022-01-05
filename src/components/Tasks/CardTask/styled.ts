@@ -33,6 +33,9 @@ interface ButtonProps {
   // eslint-disable-next-line no-unused-vars
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
+interface ButtonRemoveProps {
+  taskValue?: string;
+}
 
 export const Button = styled.button<ButtonProps>`
   width: 2rem;
@@ -53,7 +56,7 @@ export const Button = styled.button<ButtonProps>`
   }
 `;
 
-export const ButtonRemove = styled.button`
+export const ButtonRemove = styled.button<ButtonRemoveProps>`
   border: none;
   position: absolute;
   right: 0;

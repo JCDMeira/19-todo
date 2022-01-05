@@ -15,7 +15,7 @@ interface CardTaskProps {
 }
 function CardTask({ dataTask, isFirst }: CardTaskProps): JSX.Element {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { completeTodo } = TaskConsumer();
+  const { completeTodo, removeTodo } = TaskConsumer();
 
   return (
     <S.Wrapper isFirst={isFirst} isCompleted={dataTask.isCompleted}>
@@ -27,7 +27,10 @@ function CardTask({ dataTask, isFirst }: CardTaskProps): JSX.Element {
         {dataTask.isCompleted && <img src={checked} alt="task is completed" />}
       </S.Button>
       <Paragraph>{dataTask.task}</Paragraph>
-      <S.ButtonRemove>
+      <S.ButtonRemove
+        value={dataTask.task}
+        onClick={() => removeTodo(dataTask)}
+      >
         <img src={remove} alt="button for remove task " />
       </S.ButtonRemove>
     </S.Wrapper>
