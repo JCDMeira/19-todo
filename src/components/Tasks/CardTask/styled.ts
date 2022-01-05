@@ -30,6 +30,8 @@ export const Wrapper = styled.div<WrapperProps>`
 
 interface ButtonProps {
   isCompleted?: boolean;
+  // eslint-disable-next-line no-unused-vars
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -51,10 +53,12 @@ export const Button = styled.button<ButtonProps>`
   }
 `;
 
-export const ButtonRemove = styled(Button)`
+export const ButtonRemove = styled.button`
   border: none;
   position: absolute;
   right: 0;
+  background: transparent;
+  margin-right: 1.2rem;
   img {
     width: 1.2rem;
     height: 1.2rem;

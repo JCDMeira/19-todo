@@ -9,25 +9,21 @@ type PropsTaskContext = {
   todos: TaskType[];
   // eslint-disable-next-line no-unused-vars
   addTodo: (newTodo: TaskType) => void;
+  // eslint-disable-next-line no-unused-vars
+  completeTodo: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
-
-// @ salvar localStorage
-// const localHistoric = JSON.parse(localStorage.getItem('historic')) || [];
-
-// localStorage.setItem(
-//   'historic',
-//   JSON.stringify([...localHistoric, support[0]]),
-// );
 
 const DEFAULT_VALUE = {
   todos: [
     {
       task: 'hello this is my todo App',
-      isCompleted: true,
+      isCompleted: false,
     },
   ],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   addTodo: () => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  completeTodo: () => {},
 };
 
 const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
@@ -40,6 +36,31 @@ const TaskProvider: React.FC = ({ children }) => {
     localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
   };
 
+  const completeTodo = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const todo = (e.target as HTMLInputElement).value;
+    console.log('todo', todo);
+    const restOfTodos = todos.map((value) => {
+      if (value.task !== todo) {
+        return value;
+      } else {
+        return { ...value, isCompleted: true };
+      }
+    });
+    console.log('rest', restOfTodos);
+    setTodos(restOfTodos);
+  };
+
+  // const removeTodo = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   const todo = (e.target as HTMLInputElement).value;
+  //   console.log('todo', todo);
+  //   // const restOfTodos = todos.map((value) => {
+  //   //   if (value.task !== todo) {
+  //   //     return value;
+  //   //   }
+  //   // });
+  //   // console.log(restOfTodos);
+  // };
+
   useEffect(() => {
     const hadTodos = localStorage.getItem('todos');
     if (hadTodos) {
@@ -49,7 +70,7 @@ const TaskProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <TaskContext.Provider value={{ todos, addTodo }}>
+    <TaskContext.Provider value={{ todos, addTodo, completeTodo }}>
       {children}
     </TaskContext.Provider>
   );
