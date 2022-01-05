@@ -32,7 +32,6 @@ function CardsConteiner(): JSX.Element {
   //     isCompleted: false,
   //   },
   // ];
-  console.log(todos);
   return (
     <S.Wrapper>
       {todos.map((task, index) => (

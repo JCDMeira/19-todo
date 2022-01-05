@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 type TaskType = {
   task: string;
@@ -10,10 +10,14 @@ type PropsTaskContext = {
   // eslint-disable-next-line no-unused-vars
   addTodo: (newTodo: TaskType) => void;
 };
-// type PropsTaskContext = {
-//   todos: TaskType[];
-//   setTodos: React.Dispatch<React.SetStateAction<TaskType[]>>;
-// };
+
+// @ salvar localStorage
+// const localHistoric = JSON.parse(localStorage.getItem('historic')) || [];
+
+// localStorage.setItem(
+//   'historic',
+//   JSON.stringify([...localHistoric, support[0]]),
+// );
 
 const DEFAULT_VALUE = {
   todos: [
@@ -33,7 +37,16 @@ const TaskProvider: React.FC = ({ children }) => {
 
   const addTodo = (newTodo: TaskType) => {
     setTodos((todos) => [...todos, newTodo]);
+    localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
   };
+
+  useEffect(() => {
+    const hadTodos = localStorage.getItem('todos');
+    if (hadTodos) {
+      const localHistoric = JSON.parse(hadTodos);
+      setTodos(localHistoric);
+    }
+  }, []);
 
   return (
     <TaskContext.Provider value={{ todos, addTodo }}>

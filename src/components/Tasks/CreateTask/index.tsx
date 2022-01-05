@@ -16,7 +16,6 @@ function CreateTask(): JSX.Element {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log('target');
     const resultTodo = { task: formValues.myTodo, isCompleted: false };
 
     if (formValues) {
