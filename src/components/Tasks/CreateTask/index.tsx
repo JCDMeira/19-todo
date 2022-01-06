@@ -5,22 +5,21 @@ import { TaskConsumer } from '../../../Contexts/TaskContext';
 import * as S from './styled';
 
 interface formValuesProps {
-  myTodo?: string;
+  myTodo: string;
 }
 
 function CreateTask(): JSX.Element {
   const { todos, addTodo } = TaskConsumer();
 
-  const [formValues, setFormValues] = useState<formValuesProps>({});
+  const [formValues, setFormValues] = useState<formValuesProps>({ myTodo: '' });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log('target');
-    const resultTodo = { task: 'ola', isCompleted: false };
+    const resultTodo = { task: formValues.myTodo, isCompleted: false };
 
     if (formValues) {
-      setFormValues({});
+      setFormValues({ myTodo: '' });
       addTodo(resultTodo);
     }
   };
