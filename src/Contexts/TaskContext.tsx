@@ -13,6 +13,8 @@ type PropsTaskContext = {
   completeTodo: (e: TaskType) => void;
   // eslint-disable-next-line no-unused-vars
   removeTodo: (e: TaskType) => void;
+  // eslint-disable-next-line no-unused-vars
+  clearCompleted: () => void;
 };
 
 const DEFAULT_VALUE = {
@@ -28,6 +30,8 @@ const DEFAULT_VALUE = {
   completeTodo: () => {},
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   removeTodo: () => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  clearCompleted: () => {},
 };
 
 const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
@@ -66,6 +70,16 @@ const TaskProvider: React.FC = ({ children }) => {
     localStorage.setItem('todos', JSON.stringify(restOfTodos));
   };
 
+  const clearCompleted = () => {
+    const restOfTodos = todos.filter((value) => {
+      if (value.isCompleted === false) {
+        return value;
+      }
+    });
+    setTodos(restOfTodos);
+    localStorage.setItem('todos', JSON.stringify(restOfTodos));
+  };
+
   useEffect(() => {
     const hadTodos = localStorage.getItem('todos');
     if (hadTodos) {
@@ -75,7 +89,9 @@ const TaskProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <TaskContext.Provider value={{ todos, addTodo, completeTodo, removeTodo }}>
+    <TaskContext.Provider
+      value={{ todos, addTodo, completeTodo, removeTodo, clearCompleted }}
+    >
       {children}
     </TaskContext.Provider>
   );

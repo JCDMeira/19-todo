@@ -7,7 +7,7 @@ import * as S from './styled';
 type leftProp = number;
 
 function Options(): JSX.Element {
-  const { todos } = TaskConsumer();
+  const { todos, clearCompleted } = TaskConsumer();
   const leftTodos: leftProp = todos.reduce((acc, element) => {
     return element.isCompleted ? acc : acc + 1;
   }, 0);
@@ -22,7 +22,9 @@ function Options(): JSX.Element {
           <button>Completed</button>
         </div>
       </S.OptionsFilter>
-      <button className="clearButton">Clear Completed</button>
+      <button className="clearButton" onClick={() => clearCompleted()}>
+        Clear Completed
+      </button>
     </S.Wrapper>
   );
 }
