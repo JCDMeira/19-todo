@@ -15,6 +15,9 @@ type PropsTaskContext = {
   removeTodo: (e: TaskType) => void;
   // eslint-disable-next-line no-unused-vars
   clearCompleted: () => void;
+  tagFilter: string;
+  // eslint-disable-next-line no-unused-vars
+  setTagFilter: (e: string) => void;
 };
 
 const DEFAULT_VALUE = {
@@ -32,12 +35,16 @@ const DEFAULT_VALUE = {
   removeTodo: () => {},
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   clearCompleted: () => {},
+  tagFilter: 'all',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setTagFilter: () => {},
 };
 
 const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
 
 const TaskProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState(DEFAULT_VALUE.todos);
+  const [tagFilter, setTagFilter] = useState('all');
 
   const addTodo = (newTodo: TaskType) => {
     setTodos((todos) => [...todos, newTodo]);
@@ -90,7 +97,15 @@ const TaskProvider: React.FC = ({ children }) => {
 
   return (
     <TaskContext.Provider
-      value={{ todos, addTodo, completeTodo, removeTodo, clearCompleted }}
+      value={{
+        todos,
+        addTodo,
+        completeTodo,
+        removeTodo,
+        clearCompleted,
+        tagFilter,
+        setTagFilter,
+      }}
     >
       {children}
     </TaskContext.Provider>
