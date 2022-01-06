@@ -53,16 +53,6 @@ export const OptionsFilter = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    button {
-      border: none;
-      cursor: pointer;
-      background: transparent;
-      font-family: inherit;
-      font-weight: inherit;
-      font-size: inherit;
-      color: inherit;
-    }
   }
 
   @media (min-width: 1024px) {
@@ -72,4 +62,19 @@ export const OptionsFilter = styled.div`
     left: auto;
     top: auto;
   }
+`;
+interface optionsProps {
+  tag: string;
+  myTag: string;
+}
+
+export const Button = styled.div<optionsProps>`
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: ${(props) =>
+    props.tag === props.myTag ? 'var(--bright-blue)' : 'inherit'};
 `;

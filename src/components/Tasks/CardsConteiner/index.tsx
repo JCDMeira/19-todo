@@ -4,7 +4,7 @@ import CardTask from '../CardTask';
 import * as S from './styled';
 
 function CardsConteiner(): JSX.Element {
-  const { todos } = TaskConsumer();
+  const { todos, tagFilter } = TaskConsumer();
 
   // const test = [
   //   {
@@ -34,13 +34,36 @@ function CardsConteiner(): JSX.Element {
   // ];
   return (
     <S.Wrapper>
-      {todos.map((task, index) => (
-        <CardTask
-          key={index}
-          dataTask={task}
-          isFirst={index === 0 ? 'first' : 'notFirst'}
-        />
-      ))}
+      {tagFilter === 'all' &&
+        todos.map((task, index) => (
+          <CardTask
+            key={index}
+            dataTask={task}
+            isFirst={index === 0 ? 'first' : 'notFirst'}
+          />
+        ))}
+      {tagFilter === 'active' &&
+        todos.map(
+          (task, index) =>
+            task.isCompleted === false && (
+              <CardTask
+                key={index}
+                dataTask={task}
+                isFirst={index === 0 ? 'first' : 'notFirst'}
+              />
+            ),
+        )}
+      {tagFilter === 'completed' &&
+        todos.map(
+          (task, index) =>
+            task.isCompleted === true && (
+              <CardTask
+                key={index}
+                dataTask={task}
+                isFirst={index === 0 ? 'first' : 'notFirst'}
+              />
+            ),
+        )}
     </S.Wrapper>
   );
 }

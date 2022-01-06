@@ -13,6 +13,11 @@ type PropsTaskContext = {
   completeTodo: (e: TaskType) => void;
   // eslint-disable-next-line no-unused-vars
   removeTodo: (e: TaskType) => void;
+  // eslint-disable-next-line no-unused-vars
+  clearCompleted: () => void;
+  tagFilter: string;
+  // eslint-disable-next-line no-unused-vars
+  setTagFilter: (e: string) => void;
 };
 
 const DEFAULT_VALUE = {
@@ -28,12 +33,18 @@ const DEFAULT_VALUE = {
   completeTodo: () => {},
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   removeTodo: () => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  clearCompleted: () => {},
+  tagFilter: 'all',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setTagFilter: () => {},
 };
 
 const TaskContext = createContext<PropsTaskContext>(DEFAULT_VALUE);
 
 const TaskProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState(DEFAULT_VALUE.todos);
+  const [tagFilter, setTagFilter] = useState('all');
 
   const addTodo = (newTodo: TaskType) => {
     setTodos((todos) => [...todos, newTodo]);
@@ -66,6 +77,16 @@ const TaskProvider: React.FC = ({ children }) => {
     localStorage.setItem('todos', JSON.stringify(restOfTodos));
   };
 
+  const clearCompleted = () => {
+    const restOfTodos = todos.filter((value) => {
+      if (value.isCompleted === false) {
+        return value;
+      }
+    });
+    setTodos(restOfTodos);
+    localStorage.setItem('todos', JSON.stringify(restOfTodos));
+  };
+
   useEffect(() => {
     const hadTodos = localStorage.getItem('todos');
     if (hadTodos) {
@@ -75,7 +96,17 @@ const TaskProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <TaskContext.Provider value={{ todos, addTodo, completeTodo, removeTodo }}>
+    <TaskContext.Provider
+      value={{
+        todos,
+        addTodo,
+        completeTodo,
+        removeTodo,
+        clearCompleted,
+        tagFilter,
+        setTagFilter,
+      }}
+    >
       {children}
     </TaskContext.Provider>
   );
